@@ -39,11 +39,7 @@
       <h2>&nbsp;= <span id="pi-est">Result</span></h2>
     </div>
     
-    <div class="buttons">
-        <button onclick="go()" id="go">GO</button>
-        <button onclick="stop()" id="stop">STOP</button>
-        <button onclick="location.reload()">Refresh</button>
-      </div>
+
       <div id="stats">
 
         <table>
@@ -65,7 +61,7 @@
       
  
         <form class="ranges">
-          <label for="speed">Interval:</label>
+          <label for="speed">Interval:&nbsp;</label>
           <input
           id="speed"
           type="range"
@@ -81,7 +77,7 @@
 
         <form class="ranges">
        
-            <label for="darts">Dots:</label>
+            <label for="darts">Dots p/turn:&nbsp;</label>
             <input
             id="darts"
             type="range"
@@ -107,6 +103,12 @@
         <input id="outCircle" type="color" name="outCircle" value="#ffffff" />
       </div>
     </div>
+
+    <div class="buttons">
+        <button onclick="go()" id="go">GO</button>
+        <button onclick="stop()" id="stop">STOP</button>
+        <button onclick="location.reload()">Refresh</button>
+      </div>
   </div>
   </div>
   
