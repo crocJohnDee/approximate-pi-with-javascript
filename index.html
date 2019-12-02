@@ -12,27 +12,52 @@
     <title>PI</title>
   </head>
   <body>
+
+    
+    
+    
     <div id="info">
+      <div>
+
+        <label for="speed">Speed:</label>
+        <input
+        id="speed"
+        type="range"
+        name="speed"
+        min="50"
+        max="1000"
+        value="500"
+        /> <br> 
+
+        <label for="darts">Darts:</label>
+        <input
+          id="darts"
+          type="range"
+          name="darts"
+          min="1"
+          max="1000"
+          value="10"
+        /> <br>
+        <label for="inCircle">in circle</label>
+        <input id="inCircle" type="color" name="inCircle" value="#ffc600" /> <br>
+        <label for="outCircle">out circle</label>
+        <input id="outCircle" type="color" name="outCircle" value="#ffc600" />
+      </div>
       <p>PI = 3.14159265359</p>
       <p>record = <span id="record">0.00000000000</span></p>
       <p>Total darts = <span id="total-darts">0</span></p>
     </div>
     <div id="container">
-      <canvas
-        RenderTransformOrigin="0.5,0.5"
-        id="draw"
-        width="400"
-        height="400"
-      ></canvas>
-      <div id="circle"></div>
-
-      <div id="console"></div>
+      <canvas RenderTransformOrigin="0.5,0.5" id="draw"></canvas>
+      <!-- <div id="console"></div> -->
     </div>
 
     <div class="buttons">
       <button onclick="go()" id="go">GO</button>
       <button onclick="stop()" id="stop">STOP</button>
     </div>
+    <button onclick="location.reload()">Refresh</button>
+  </div>
     <script src="main.js"></script>
   </body>
 </html>

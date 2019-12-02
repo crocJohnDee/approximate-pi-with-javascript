@@ -11,30 +11,26 @@ html {
 }
 
 #container {
-  display: grid;
-  grid-template-columns: 400px 200px;
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  border: 1px solid #111;
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  #container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    width: 60%;
+  }
 }
 
 canvas {
-  grid-column: 1;
-  grid-row: 2;
-  display: inline-block;
-  width: 400px;
-  height: 400px;
-  border: 1px solid rgb(179, 179, 179);
-  position: absolute;
-}
-
-#circle {
-  display: inline-block;
-  border-radius: 50%;
-  width: 400px;
-  height: 400px;
-  border: 1px dashed rgb(77, 77, 77);
-  position: relative;
-  z-index: -1;
+  background-color: rgba(163, 16, 16, 0.3);
+  display: block;
 }
 
 #info {
@@ -78,12 +74,16 @@ button:hover {
 }
 
 #console {
+  position: absolute;
+  right: 0;
+  top: 0;
   font-family: "VT323", monospace;
-  height: 400px;
+  width: 140px;
   color: white;
   text-align: center;
-  background: #00011b;
+  background: #111;
   font-size: 19px;
+  padding: 0 20px;
 }
 
 .hl {
