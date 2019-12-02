@@ -21,22 +21,27 @@
     <div id="expl">
       <h4>How?</h4>
       <br>
-      <p>We all know that JavaSript is not the most ideal language to do large math calculations. <br> Nevertheless, we can use JavaScript to visualize Math in a fun way.</p>
+      <p>JavaSript may not be great in large math calculations. <br>But! we can use JavaScript to visualize math in a useless, but fun-to-make way!</p>
       <br>
-      <p>Below You see a canvas and 3 buttons. When you click on GO the programm will add random dots to the canvas.</p>
-      <p>The program uses the pythagoras formule to calculte the placement of the dot from the center, if the number that get's calculated is <= to the circle radius it will be one color, if the number is larger it will be another color.</p>
+      <p>Below is a canvas and 3 buttons. When you click GO - JavaScript will add random dots to the canvas, using the .random() method.</p>
+      <p>Using the Pythagorean theorem, JavaScript can calculate the distance of the dot from the canvas center. <br> <br> If the distance of the dot is <= to the canvas radius, the dot get's a different color.
+      </p>
+        
+          <p>
+        JavaScript counts the number of dots that fall within the radius and stores it in a variable</p>
+      <p>Another variable is used to count the total number of dots.</p>
       <br>
-      <p>We can than estimate PI as the following;</p>
+      <p>JavaScript can than use these variable to give a estimate of <span class="pi">&pi;</span></p>
     </div>
     
     <div id="formula">
       <h2>PI &asymp; 4 *&nbsp;</h2>
       <div class="divide">
-        <p><span id="dots-inside">dots within circle</span></p>
+        <p><span id="dots-inside">dotsInCircle</span></p>
         <hr>
-        <p><span id="total-darts">total dots</span></p>
+        <p><span id="total-darts">totalDots</span></p>
       </div>
-      <h2>&nbsp;= <span id="pi-est">Result</span></h2>
+      <h3>&nbsp;= <span id="pi-est">random estimation</span></h3>
     </div>
     
 
