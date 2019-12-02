@@ -1,17 +1,49 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
+  color: #eee;
   padding: 20px;
   min-height: 100vh;
   background: #000;
 }
 
+header {
+  text-align: center;
+  padding: 40px;
+  line-height: 40px;
+}
+
+#expl {
+  text-align: center;
+  line-height: 20px;
+}
+
+#formula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.divide {
+  text-align: center;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ranges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #container {
-  border: 1px solid #111;
   position: relative;
   margin: 0 auto;
 }
@@ -29,11 +61,13 @@ html {
 }
 
 canvas {
-  background-color: rgba(163, 16, 16, 0.3);
+  border: 1px dotted rgb(153, 153, 153);
+  background-color: rgba(0, 29, 92, 0.089);
   display: block;
 }
 
 #info {
+  margin-top: 100px;
   color: white;
   display: flex;
   margin-bottom: 10px;
@@ -62,6 +96,7 @@ button:hover {
 
 .buttons {
   width: 400px;
+  margin: 10px auto;
   text-align: center;
   margin-top: 10px;
 }
@@ -89,4 +124,12 @@ button:hover {
 .hl {
   color: black;
   background: yellow;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 10px;
 }

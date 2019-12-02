@@ -2,7 +2,10 @@
 const canvas = document.querySelector("#draw");
 const myConsole = document.querySelector("#console");
 const totalDarts = document.querySelector("#total-darts");
+const dotsIinside = document.querySelector("#dots-inside");
+const result = document.querySelector("#pi-est");
 const record = document.querySelector("#record");
+const recordAt = document.querySelector("#record-at");
 const ctx = canvas.getContext("2d");
 
 // ***********************
@@ -33,9 +36,10 @@ let arr = []; // Console
 // Ui variables
 let dartsPerTurn = document.querySelector("#darts").value;
 let speed = document.querySelector("#speed").value;
-let colorInCircle = "red";
-let colorOutCircle = "white";
+let colorInCircle = document.querySelector("#inCircle").value;
+let colorOutCircle = document.querySelector("#outCircle").value;
 // **************************
+console.log(document.querySelector("#outCircle").value);
 
 let callDraw;
 
@@ -93,15 +97,17 @@ function draw() {
       }
       // *****************************************************
 
-      record.innerHTML = `${recordTxt.join("")} @ ${total}`;
+      record.innerHTML = `${recordTxt.join("")}`;
+      recordAt.innerHTML = `${total} dots`;
     }
     //******************************* end pie */
 
     // if (myConsole.childNodes.length > 21) {
     //   myConsole.removeChild(myConsole.childNodes[21]);
     // }
-
+    dotsIinside.textContent = circleCount.toLocaleString();
     totalDarts.textContent = total.toLocaleString();
+    result.textContent = pie.toLocaleString();
   }
 }
 
@@ -126,6 +132,8 @@ document.querySelector("#darts").addEventListener("change", e => {
 document.querySelector("#speed").addEventListener("change", e => {
   stop();
   speed = e.target.value;
+  console.log(speed);
+
   go();
 });
 
