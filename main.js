@@ -1,5 +1,7 @@
 // QuerySelectors
 const canvas = document.querySelector("#draw");
+let width = document.querySelector("#container").offsetWidth;
+let height = document.querySelector("#container").offsetWidth;
 const myConsole = document.querySelector("#console");
 const totalDarts = document.querySelector("#total-darts");
 const dotsIinside = document.querySelector("#dots-inside");
@@ -7,43 +9,45 @@ const result = document.querySelector("#pi-est");
 const record = document.querySelector("#record");
 const recordAt = document.querySelector("#record-at");
 const ctx = canvas.getContext("2d");
-
-// ***********************
-
-let width = document.querySelector("#container").offsetWidth;
-let height = document.querySelector("#container").offsetWidth;
-canvas.width = width;
-canvas.height = height;
-
-// Get center of canvas
-let centerX = width / 2;
-let centerY = height / 2;
-// ************************************
-console.log(centerX, centerY);
-
-// Score keeping
-let circleCount = 0;
-let squareCount = 0;
-let recordPI = 0;
-let total = 0;
-// ***********
-
-const realPI = 3.14159265359;
-let recordDiff = Math.abs(realPI - recordPI);
-
-let arr = []; // Console
-
 // Ui variables
 let dartsPerTurn = document.querySelector("#darts").value;
 let speed = document.querySelector("#speed").value;
 let colorInCircle = document.querySelector("#inCircle").value;
 let colorOutCircle = document.querySelector("#outCircle").value;
+// ***********************
+
+// The one true Const
+const realPI = 3.14159265359;
 // **************************
-console.log(document.querySelector("#outCircle").value);
 
+// Init canvas width
+canvas.width = width;
+canvas.height = height;
+// ********************
+
+// Get center of canvas
+let centerX = width / 2;
+let centerY = height / 2;
+// **********************
+
+// Score keeping
+let total = 0;
+let recordPI = 0;
+let circleCount = 0;
+let squareCount = 0;
+// *****************
+
+let recordDiff = Math.abs(realPI - recordPI);
+let arr = []; // Console
+
+let isRunning = false;
 let callDraw;
-
-const go = () => (callDraw = setInterval(draw, speed));
+const go = () => {
+  isRunning = true;
+  console.log(isRunning);
+  callDraw ? null : (callDraw = setInterval(draw, speed));
+};
+console.log(isRunning);
 
 function draw() {
   for (let i = 0; i < dartsPerTurn; i++) {
@@ -113,6 +117,9 @@ function draw() {
 
 function stop() {
   clearInterval(callDraw);
+  callDraw = null;
+  isRunning = false;
+  console.log(isRunning);
 }
 
 window.addEventListener("resize", () => {
@@ -130,11 +137,11 @@ document.querySelector("#darts").addEventListener("change", e => {
   dartsPerTurn = e.target.value;
 });
 document.querySelector("#speed").addEventListener("change", e => {
-  stop();
   speed = e.target.value;
-  console.log(speed);
-
-  go();
+  if (isRunning) {
+    stop();
+    go();
+  }
 });
 
 document.querySelector("#inCircle").addEventListener("change", e => {
