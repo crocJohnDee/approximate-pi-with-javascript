@@ -3,14 +3,14 @@
   padding: 0;
 }
 
-html {
+body {
   background: url(bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-body {
+.opac {
   color: rgb(160, 160, 160);
   padding: 20px;
   min-height: 100vh;
@@ -34,7 +34,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .divide {
@@ -45,12 +45,49 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .ranges {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 8px 0;
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.color {
+  display: flex;
+  align-items: center;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none !important;
+  width: 32px;
+  height: 32px;
+  margin: 8px 5px;
+  cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
 }
 
 #container {
@@ -108,10 +145,8 @@ button:hover {
 }
 
 .buttons {
-  width: 400px;
-  margin: 10px auto;
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 #go {
